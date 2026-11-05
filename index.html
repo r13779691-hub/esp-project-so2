@@ -2,34 +2,50 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ESP Android</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESP Interface</title>
 <style>
 body {
-  background: #10151f;
-  color: white;
-  font-family: Arial;
-  text-align: center;
-  padding: 20px;
+ background:#101010;
+ color:white;
+ font-family:Arial;
+ text-align:center;
 }
-h1 { color: #00ff88; }
+h1 {color:#00ff88;}
+.panel {
+ background:#202020;
+ margin:15px;
+ padding:20px;
+ border-radius:15px;
+}
 button {
-  display: block;
-  width: 100%;
-  padding: 16px;
-  margin: 12px 0;
-  border: 0;
-  border-radius: 12px;
-  background: #00cc77;
-  font-size: 18px;
+ background:#00cc77;
+ color:black;
+ border:0;
+ padding:13px;
+ margin:7px;
+ border-radius:8px;
+ font-weight:bold;
 }
 </style>
 </head>
 <body>
-<h1>ESP ANDROID</h1>
-<p>Демонстрационное ESP-меню</p>
-<button onclick="alert('ESP включён')">ESP: ON</button>
-<button onclick="alert('BOX включён')">BOX: ON</button>
-<button onclick="alert('Настройки')">SETTINGS</button>
+<h1>ESP INTERFACE</h1>
+<div class="panel">
+<h2>MAIN MENU</h2>
+<button onclick="toggle(this)">ESP: OFF</button>
+<button onclick="toggle(this)">LINES: OFF</button>
+<button onclick="toggle(this)">BOX: OFF</button>
+<button onclick="toggle(this)">SETTINGS</button>
+</div>
+<script>
+function toggle(btn) {
+ if(btn.innerText.includes("SETTINGS")) {
+ alert("Настройки интерфейса");
+ return;
+ }
+ btn.innerText = btn.innerText.replace("OFF","ON").replace("ON","OFF");
+}
+</script>
 </body>
 </html>
