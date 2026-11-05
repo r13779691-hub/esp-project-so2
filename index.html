@@ -2,50 +2,43 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ESP Interface</title>
 <style>
 body {
- background:#101010;
- color:white;
- font-family:Arial;
- text-align:center;
+  background: #090d18;
+  color: white;
+  font-family: Arial;
+  text-align: center;
+  padding: 20px;
 }
-h1 {color:#00ff88;}
-.panel {
- background:#202020;
- margin:15px;
- padding:20px;
- border-radius:15px;
+.menu {
+  background: #151d30;
+  padding: 25px;
+  border-radius: 18px;
+  max-width: 350px;
+  margin: auto;
 }
+h1 { color: #00eaff; }
 button {
- background:#00cc77;
- color:black;
- border:0;
- padding:13px;
- margin:7px;
- border-radius:8px;
- font-weight:bold;
+  width: 100%;
+  padding: 14px;
+  margin: 8px 0;
+  border: 0;
+  border-radius: 10px;
+  background: #00bcd4;
+  color: white;
+  font-size: 16px;
 }
 </style>
 </head>
 <body>
+<div class="menu">
 <h1>ESP INTERFACE</h1>
-<div class="panel">
-<h2>MAIN MENU</h2>
-<button onclick="toggle(this)">ESP: OFF</button>
-<button onclick="toggle(this)">LINES: OFF</button>
-<button onclick="toggle(this)">BOX: OFF</button>
-<button onclick="toggle(this)">SETTINGS</button>
+<p>Demo Control Panel</p>
+<button onclick="alert('Демонстрационный режим')">ESP Demo</button>
+<button onclick="alert('Настройки открыты')">Настройки</button>
+<button onclick="alert('Информация о проекте')">О проекте</button>
 </div>
-<script>
-function toggle(btn) {
- if(btn.innerText.includes("SETTINGS")) {
- alert("Настройки интерфейса");
- return;
- }
- btn.innerText = btn.innerText.replace("OFF","ON").replace("ON","OFF");
-}
-</script>
 </body>
 </html>
